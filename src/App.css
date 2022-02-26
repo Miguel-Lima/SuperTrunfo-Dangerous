@@ -1,0 +1,470 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Comforter&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  background-image: url(https://c.tenor.com/jnTEk2uXFOIAAAAC/michael-myers.gif);
+  background-position: center;
+  background-size: cover;
+}
+
+.col-form {
+  /* background: #000000; */
+  width: 50%;
+  padding: 80px 30px;
+}
+
+.col-card {
+  /* background-image: url(https://wallpaperaccess.com/full/487351.jpg); */
+  /* background-position: center;
+  background-size: cover; */
+  /* background: #000000;  /* fallback for old browsers */
+  /* background: -webkit-linear-gradient(to right, #434343, #000000);  Chrome 10-25, Safari 5.1-6 */
+  /* background: linear-gradient(to right, #434343, #000000); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  width: 50%;
+  padding: 80px 30px;
+}
+
+.form-title, .preview-title {
+  text-align: center;
+  margin-bottom: 70px;
+  font-weight: 800;
+}
+
+.preview-title {
+  color: white;
+}
+
+.form {
+  width: 45%;
+  margin: 0 auto;
+  color: #790000;
+  background: #000000e7;  /* fallback for old browsers */
+  /* background: -webkit-linear-gradient(to left, #434343e1, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+  /* background: linear-gradient(to left #434343b7, #000000e8); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+
+  box-shadow: 2px 2px 50px rgb(92, 1, 1);
+  padding: 12px;
+  border-radius: 10px;
+  
+}
+
+.form h2 {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.form label {
+  font-weight: 800;
+  font-size: 17px;
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  display: block;
+  margin: 15px;
+  font-family: 'Architects Daughter', cursive;
+}
+
+.form input, .form textarea, .form select {
+  width: 100%;
+  height: 37px; 
+  border: none;
+  border-bottom: 1px solid #3D495C;
+  background-color: #dfdfdfb2;
+  outline: none;
+  padding: 15px;
+  margin-top: 8px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.form select {
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+.form textarea {
+  min-height: 80px;
+  line-height: 20px;
+}
+
+.form .label-flex {
+  display: flex;
+  align-items: center;
+}
+
+.label-flex span {
+  margin-right: 15px;
+}
+
+
+.label-flex input {
+  border: 1px solid #3D495C;
+  border-radius: 2px;
+  margin-top: 0;
+  border-radius: 5px;
+}
+
+.span-points {
+  font-size: 14px;
+  display: block;
+  text-align: right;
+  margin-top: -10px;
+  margin-bottom: 35px;
+  color: #535b68;
+}
+
+.form .label-image {
+  margin-bottom: 40px;
+}
+
+.form .label-image input {
+  border: 1px solid #000000;
+  flex: 1;
+  border-radius: 0 2px 2px 0px;
+}
+
+.container-input-image {
+  display: flex;
+  width: 100%;
+}
+
+.container-input-image span {
+  color: white;
+  background-color: #310202;
+  width: 37px;
+  margin-right: 0;
+  border-radius: 2px 0 0 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.form .label-check {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  line-height: 25px;
+}
+
+.form .label-check input{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: white;
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  border: 1px solid #3D495C;
+  padding: 0;
+  margin: 0 10px 0 0;
+  position: relative;
+}
+
+.form .label-check input:checked{
+  background-color: #6b0303;
+}
+
+.form .label-check input:checked::after{
+  content: "";
+  width: 4px;
+  height: 8px;
+  border: 4px solid white;
+  border-width: 0 2px 2px 0;
+  position: absolute;
+  transform: rotate(45deg);
+  top: 0;
+  left: 0;
+  margin: 2px 0 0 5px;
+}
+
+.save-button {
+  width: 115px;
+  height: 40px;
+  background: #8d0808;
+  border-radius: 2px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  margin-top: 40px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 37%;
+  margin-bottom: 10px;
+}
+/*LADO DIREITO */
+
+.container-card {
+  max-width: 320px;
+  width: 100%;
+}
+
+.preview-title {
+  font-family: 'Architects Daughter', cursive;
+  /* font-size: 1.7rem; */
+  font-size: 30px;
+  font-weight: 700;
+}
+ 
+.card {
+  background: #000000;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #434343ab, #000000a6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #797979a4, #000000a4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  box-shadow: 2px 2px 40px rgb(136, 0, 0);
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  min-height: 538px;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.card:hover {
+  transition: 2.6s;
+  filter: grayscale(10%);
+  transform: scale(1.3);
+  cursor: pointer;
+}
+
+.border-card {
+  background: #8E0E00;  /* fallback for old browsers */
+ background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);  /* Chrome 10-25, Safari 5.1-6 */
+ background: linear-gradient(to right, #000000, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  width: 100%;
+  height: 600px;
+  border-radius: 8px;
+  min-height: 520px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content {
+background: #870000ca;  /* fallback for old browsers */
+ background: -webkit-linear-gradient(to right, #000000d2, #870000d2);  /* Chrome 10-25, Safari 5.1-6 */
+ background: linear-gradient(to right, #000000c7, #870000b4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 0 0 8px 8px;
+  padding: 15px;
+  margin-top: auto;
+}
+
+.card h2 {
+  font-size: 18px;
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  background-color: #000000d3;
+  padding: 15px;
+  border-radius: 8px 8px 0 0;
+}
+
+.card img {
+  max-width: 100%;
+  max-height: 200px;
+  margin: 0 auto;
+  display: block;
+}
+
+.card .description {
+  font-size: 12px;
+  line-height: 20px;
+  color: white;
+  font-weight: 500;
+  padding: 10px 15px;
+}
+
+.attribute {
+  background-color: rgba(0, 0, 0, 0.322);
+  margin-bottom: 5px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.attribute span {
+  font-size: 14px;
+  font-weight: 600;color: #b6b6b6;
+}
+
+.rarity {
+  margin-top: 20px;
+}
+
+.rarity span {
+  text-transform: capitalize;
+  margin-right: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  font-weight: 600;color: #b6b6b6;
+}
+
+.trunfo {
+  color: rgb(190, 87, 87);
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 26px;
+}
+
+[disabled] {
+  background-color: #797979b7;;
+}
+
+.cardList {
+  display: flex;
+  justify-content: center;
+  padding: 50px 30px;
+  flex-wrap: wrap;
+  gap: 50px;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 2px 2px 100px rgb(92, 1, 1);
+  border-top: 1px #ddd;
+  min-height: 700px;
+}
+
+.btn-remove-card {
+  background-color: rgb(129, 18, 18);
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 
+  8px;
+  display: block;
+  margin: 10px auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-remove-card:hover {
+  background-color: rgb(134, 16, 16);
+}
+
+#input-search {
+  width: 100%;
+  height: 37px; 
+  border: none;
+  border: 1px solid #3D495C;
+  background-color: #dddddd81;;
+  outline: none;
+  padding: 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  max-width: 300px;
+  min-width: 200px;
+}
+
+.filterCards {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.filterCards h2 {
+  text-align: center;
+  color: #7e1212;
+  margin-bottom: 20px;
+  font-size: 35px;
+  font-family: 'Architects Daughter', cursive;
+}
+
+.filterCards label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #5d0707;
+  display: flex;
+  align-items: center;
+  max-width: 150px;
+  /* margin-left: 40%; */
+}
+
+.container-search {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-left: 40%;
+}
+
+#search-legend {
+  font-size: 16px;
+  font-weight: 700;
+  color: #661313;
+  margin-bottom: 15px;
+  display: block;
+  margin-left: 40%;
+}
+
+#searchRarity {
+  width: 100%;
+  max-width: 150px;
+  height: 37px;
+  border-radius: 4px;
+  border: 1px solid #3D495C;
+  background-color: #cfcfcf8e;;
+  outline: none;
+  padding-left: 5px;
+}
+
+#input-search:disabled {
+  background-color: #CCC;
+  border: none;
+}
+
+#searchRarity:disabled {
+  background-color: #bbb;
+  color: #555;
+  border: none;
+}
+
+#searchSuperTrunfo{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: white;
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  border: 1px solid #3D495C;
+  padding: 0;
+  margin: 0 10px 0 0;
+  position: relative;
+}
+
+#searchSuperTrunfo:checked{
+  background-color: #6b0f03;
+}
+
+#searchSuperTrunfo:checked::after{
+  content: "";
+  width: 4px;
+  height: 8px;
+  border: 4px solid white;
+  border-width: 0 2px 2px 0;
+  position: absolute;
+  transform: rotate(45deg);
+  top: 0;
+  left: 0;
+  margin: 2px 0 0 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .col-form, .col-card , .form{
+    width: 100%;
+  }
+}
