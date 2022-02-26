@@ -6,37 +6,30 @@ class Card extends Component {
     super();
 
     this.state = {
-      tempName: 'Nome da carta',
-      tempImage: 'https://media0.giphy.com/media/jbJYmyIdelAJh9LQPs/giphy.gif?cid=ecf05e47z1clfrmzqg852c7yp5v47a6q0cjh4j8hl1csl8lm&rid=giphy.gif&ct=g',
-      tempDescription: 'Descrição...',
+      nameCard: 'Nome da carta',
+      imageInicial: 'https://c.tenor.com/6xOcScBkgqkAAAAC/ax-serial-killer.gif',
+      descriptionCard: 'Descrição...',
     };
   }
 
   render() {
     const {
-      tempName,
-      tempImage,
-      tempDescription,
+      nameCard,
+      imageInicial,
+      descriptionCard,
     } = this.state;
 
     const {
-      cardName,
-      cardDescription,
-      cardAttr1,
-      cardAttr2,
-      cardAttr3,
-      cardImage,
-      cardRare,
-      cardTrunfo,
-    } = this.props;
+      cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, } = this.props
+    const { cardImage, cardRare, cardTrunfo, } = this.props;
 
     return (
       <div className="card">
         <div className="border-card">
-          <h2 data-testid="name-card">{cardName || tempName}</h2>
-          <img src={ cardImage || tempImage } alt={ cardName } data-testid="image-card" />
+          <h2 data-testid="name-card">{cardName || nameCard}</h2>
+          <img src={ cardImage || imageInicial } alt={ cardName } data-testid="image-card" />
           <p className="description" data-testid="description-card">
-            {cardDescription || tempDescription}
+            {cardDescription || descriptionCard}
           </p>
           <div className="card-content">
             <p className="attribute" data-testid="attr1-card">

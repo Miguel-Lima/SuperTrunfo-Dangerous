@@ -2,6 +2,7 @@ import React from 'react';
 import Card from './components/Card';
 import Form from './components/Form';
 import './App.css';
+import MAP from './components/FiltersRarity';
 
 
 class App extends React.Component {
@@ -19,7 +20,7 @@ class App extends React.Component {
         rarity: 'normal',
         cardTrunfo: false,
       },
-      initialForm: {
+      formInitial: {
         name: '',
         description: '',
         attr01: 0,
@@ -36,19 +37,6 @@ class App extends React.Component {
       searchValues: { searchText: '', searchRarity: '', searchSuperTrunfo: false },
     };
   }
-
-  handleChange = ({ target }) => {
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const { formData } = this.state;
-    let { remainingPoints } = this.state;
-    const duzentosEDez = 210;
-    formData[target.name] = value;
-    remainingPoints = duzentosEDez - (Number(formData.attr01) + Number(formData.attr02));
-    remainingPoints -= Number(formData.attr03);
-    this.setState({ formData, remainingPoints }, this.formValidation);
-  }
-
-
   // FILTRO DE BUSCA
   handleSearch = ({ target }) => {
     if (target.type === 'checkbox') {
@@ -68,7 +56,7 @@ class App extends React.Component {
     }
   }
 
-  getFilteredCards = () => {
+  filterCards = () => {
     const { savedCards, searchValues } = this.state;
     const {
       searchText,
@@ -89,24 +77,32 @@ class App extends React.Component {
         card.name.toLowerCase().includes(searchText)
       ))
     );
+  } 
+  handleChange = ({ target }) => {
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const { formData } = this.state;
+    let { remainingPoints } = this.state;
+    const total = 210;
+    formData[target.name] = value;
+    remainingPoints = total - (Number(formData.attr01) + Number(formData.attr02));
+    remainingPoints -= Number(formData.attr03);
+    this.setState({ formData, remainingPoints }, this.formValidation);
   }
+
 
   formValidation = () => {
     const { formData } = this.state;
     const { name, description, attr01, attr02, attr03, image } = formData;
-    const noventa = 90;
-    const duzentosEDez = 210;
+    const valorN = 90;
+    const total = 210;
     if (
       name.length > 0
-      && description.length > 0
-      && image.length > 0
-      && attr01.length > 0
-      && attr02.length > 0
-      && attr03.length > 0
+      && description.length > 0 && image.length > 0 && attr01.length > 0
+      && attr02.length > 0 && attr03.length > 0
       && Number(attr01) >= 0 && Number(attr02) >= 0 && Number(attr03) >= 0
-      && Number(attr01) <= noventa && Number(attr02) <= noventa
-      && Number(attr03) <= noventa
-      && Number(attr01) + Number(attr02) + Number(attr03) <= duzentosEDez
+      && Number(attr01) <= valorN && Number(attr02) <= valorN
+      && Number(attr03) <= valorN
+      && Number(attr01) + Number(attr02) + Number(attr03) <= total
     ) {
       this.setState({ isSaveButtonDisabled: false });
     } else {
@@ -114,7 +110,7 @@ class App extends React.Component {
     }
   }
 
-  hasTrunfoValidation = () => {
+  trunfoValidation = () => {
     const { savedCards } = this.state;
     const bool = savedCards.some((card) => card.cardTrunfo === true);
     this.setState({ hasTrunfo: bool });
@@ -122,17 +118,17 @@ class App extends React.Component {
 
   saveCard = (event) => {
     event.preventDefault();
-    const { formData, savedCards, initialForm } = this.state;
+    const { formData, savedCards, formInitial } = this.state;
     const previousCards = savedCards;
-    this.setState({ savedCards: [...previousCards, formData] }, this.hasTrunfoValidation);
-    this.setState({ formData: { ...initialForm } });
+    this.setState({ savedCards: [...previousCards, formData] }, this.trunfoValidation);
+    this.setState({ formData: { ...formInitial } });
     this.setState({ isSaveButtonDisabled: true });
   }
 
-  removeCard = (id) => {
+  cardRemove = (id) => {
     const { savedCards } = this.state;
     const updatedCards = savedCards.filter((card) => card.name !== id);
-    this.setState({ savedCards: updatedCards }, this.hasTrunfoValidation);
+    this.setState({ savedCards: updatedCards }, this.trunfoValidation);
   }
 
   render() {
@@ -141,12 +137,12 @@ class App extends React.Component {
     const { name, description, attr01, attr02, attr03, image, rarity, cardTrunfo,
     } = formData;
     const { searchText, searchRarity, searchSuperTrunfo } = searchValues;
-    const filteredCards = this.getFilteredCards();
+    const filteredCards = this.filterCards(); 
 
     return (
       <>
         <section className="container">
-          <section className="col-form">
+          <section className="formleft">
             <Form
               cardName={ name }
               cardDescription={ description }
@@ -177,6 +173,8 @@ class App extends React.Component {
             />
           </section>
         </section>
+
+        
         <section className="cardList">
           <div className="filterCards">
             <h2>Todas as cartas</h2>
@@ -218,29 +216,31 @@ class App extends React.Component {
               </label>
             </div>
           </div>
+          <section>
+            {filteredCards.map (({ target }) => (
+                <div key={ target } className="container-card">
+                  <Card
+                    cardName={ target }
+                    cardDescription={ target }
+                    cardAttr1={ target }
+                    cardAttr2={ target }
+                    cardAttr3={ target }
+                    cardImage={ target }
+                    cardRare={ target }
+                    cardTrunfo={ target }
+                  />
+                  <button
+                    type="button"
+                    className="btn-remove-card"
+                    data-testid="delete-button"
+                    onClick={ () => this.cardRemove(target) }
+                  >
+                 
+                    Excluir
+                  </button>
+                </div>))}
+                </section>
 
-          {filteredCards.map((card) => (
-            <div key={ card.name } className="container-card">
-              <Card
-                cardName={ card.name }
-                cardDescription={ card.description }
-                cardAttr1={ card.attr01 }
-                cardAttr2={ card.attr02 }
-                cardAttr3={ card.attr03 }
-                cardImage={ card.image }
-                cardRare={ card.rarity }
-                cardTrunfo={ card.cardTrunfo }
-              />
-              <button
-                type="button"
-                className="btn-remove-card"
-                data-testid="delete-button"
-                onClick={ () => this.removeCard(card.name) }
-              >
-             
-                Excluir
-              </button>
-            </div>))}
         </section>
       </>
     );

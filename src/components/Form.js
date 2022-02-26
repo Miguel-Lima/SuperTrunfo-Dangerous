@@ -7,23 +7,13 @@ import { FcStart } from "react-icons/fc";
 class Form extends Component {
   render() {
     const {
-      cardName,
-      cardDescription,
-      cardAttr1,
-      cardAttr2,
-      cardAttr3,
-      remainingPoints,
-      cardImage,
-      cardRare,
-      cardTrunfo,
-      hasTrunfo,
-      isSaveButtonDisabled,
-      onInputChange,
-      onSaveButtonClick,
+      cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, remainingPoints, } = this.props;
+     
+    const { cardImage, cardRare, cardTrunfo, hasTrunfo, isSaveButtonDisabled, onInputChange, onSaveButtonClick,
     } = this.props;
 
     return (
-      <form className="form">
+      <form className="formFather">
         <h2 className="form-title">Horror Movie Characters <FcStart/></h2>
         <label htmlFor="name-input">
           Nome:
@@ -49,7 +39,7 @@ class Form extends Component {
           />
         </label>
 
-        <label htmlFor="attr1-input" className="label-flex">
+        <label htmlFor="attr1-input" className="label-inputFlex">
           <span>Força:</span>
           <input
             type="number"
@@ -61,7 +51,7 @@ class Form extends Component {
           />
         </label>
 
-        <label htmlFor="attr2-input" className="label-flex">
+        <label htmlFor="attr2-input" className="label-inputFlex">
           <span>Velocidade:</span>
           <input
             type="number"
@@ -73,7 +63,7 @@ class Form extends Component {
           />
         </label>
 
-        <label htmlFor="attr3-input" className="label-flex">
+        <label htmlFor="attr3-input" className="label-inputFlex">
           <span>Inteligência:</span>
           <input
             type="number"
@@ -90,7 +80,7 @@ class Form extends Component {
           { remainingPoints }
         </span>
 
-        <label htmlFor="image-input" className="label-flex label-image">
+        <label htmlFor="image-input" className="label-inputFlex label-image">
           <span>Imagem:</span>
           <div className="container-input-image">
           <span className="icon-reactImage"><FaLink /></span>
@@ -134,7 +124,7 @@ class Form extends Component {
           disabled={ isSaveButtonDisabled }
           onClick={ onSaveButtonClick }
         >
-          Salvar 🔪
+          Salvar 🩸
         </button>
       </form>
     );
