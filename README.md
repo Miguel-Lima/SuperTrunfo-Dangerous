@@ -1,10 +1,12 @@
-<div align="center">
+<div align="center" display:"flex">
 
 
 ### Project video 🩸:
 
 
 https://user-images.githubusercontent.com/83568294/155836202-07e906f4-512f-4188-9ed1-67f63eb541d2.mp4
+
+https://user-images.githubusercontent.com/83568294/155836307-f28c456d-1704-4484-bd90-16b20f7b56bc.mp4
 
 
 
